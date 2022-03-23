@@ -1,0 +1,13 @@
+{
+    "singleQuote": true,
+    "tabWidth": 4,
+    "overrides": [
+        {
+            "excludeFiles": ["jsconfig.json", ".vscode/**"],
+            "files": ["*.json", ".yml"],
+            "options": {
+                "tabWidth": 2
+            }
+        }
+    ]
+}
