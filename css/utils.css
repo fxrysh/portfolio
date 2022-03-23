@@ -1,0 +1,18 @@
+/* prettier-ignore */
+.serif {}
+
+.ml-responsive {
+    margin-left: clamp(5rem, 10vw, 8rem);
+}
+
+.sr-only {
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    position: absolute;
+    overflow: hidden;
+    margin: -1px;
+    height: 1px;
+    width: 1px;
+    padding: 0;
+    border: 0;
+}
