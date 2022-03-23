@@ -1,15 +1,7 @@
 version: 2
 updates:
   - package-ecosystem: npm
+    target-branch: dev
     directory: /
     schedule:
       interval: daily
-    commit-message:
-      prefix: fix
-
-  - package-ecosystem: github-actions
-    directory: /
-    schedule:
-      interval: daily
-    commit-message:
-      prefix: fix
