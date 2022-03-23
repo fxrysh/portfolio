@@ -1,14 +1,14 @@
 version: 2
 updates:
   - package-ecosystem: npm
-    directory: '/'
+    directory: /
     schedule:
       interval: daily
     commit-message:
       prefix: fix
 
   - package-ecosystem: github-actions
-    directory: '/'
+    directory: /
     schedule:
       interval: daily
     commit-message:
