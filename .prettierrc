@@ -1,10 +1,11 @@
 {
+    "trailingComma": "none",
     "singleQuote": true,
     "tabWidth": 4,
     "overrides": [
         {
-            "excludeFiles": ["jsconfig.json", ".vscode/**"],
-            "files": ["*.json", ".yml"],
+            "excludeFiles": ["jsconfig.json"],
+            "files": ["*.json"],
             "options": {
                 "tabWidth": 2
             }

@@ -1,0 +1,15 @@
+{
+    // prettier-ignore
+    "extends": ["eslint:recommended", "plugin:vue/essential", "@nuxtjs", "plugin:prettier/recommended"],
+    "plugins": ["vue", "prettier"],
+    "root": true,
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    }
+}
