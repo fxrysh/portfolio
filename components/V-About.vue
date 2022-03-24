@@ -60,25 +60,25 @@ export default {
         about: null,
         icons: [
             {
-                svg: 'JavaScriptSVG',
+                svg: 'JS_SVG',
                 link: 'https://js.irg/'
             },
             {
-                svg: 'TypeScriptSVG',
+                svg: 'TS_SVG',
                 link: 'https://typescriptlang.org/'
             },
             {
-                svg: 'HTMLSVG'
+                svg: 'HTML_SVG'
             },
             {
-                svg: 'RustSVG',
+                svg: 'RS_SVG',
                 link: 'https://rust-lang.org/'
             },
             {
-                svg: 'CSSSVG'
+                svg: 'CSS_SVG'
             },
             {
-                svg: 'PYSVG',
+                svg: 'PY_SVG',
                 link: 'https://python.org/'
             }
         ]

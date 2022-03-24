@@ -27,7 +27,7 @@
                 <p class="footer__content__copyright">
                     Copyright ©{{ getCurrentYear() }} FI
                 </p>
-                <p class="footer__content__note">Made with ❤</p>
+                <p class="footer__content__note">Made with ❤ from Malaysia!</p>
             </div>
             <div
                 class="footer__arrow__wrapper"
