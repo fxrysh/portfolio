@@ -37,8 +37,13 @@ export default {
             type: String,
             required: true,
             default: 'https://example.com',
-            validator: (string) =>
-                string.startsWith('https://') || string.startsWith('mailto:')
+            validator: (string) => {
+                return (
+                    string.startsWith('http://') ||
+                    string.startsWith('https://') ||
+                    string.startsWith('mailto:')
+                );
+            }
         }
     },
     data: () => ({ prefersReducedMotion: false }),
