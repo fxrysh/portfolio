@@ -43,7 +43,7 @@
 </template>
 
 <script>
-import SourceSVG from '~/images/source.svg?inline';
+import SourceSVG from '~/images/logo/GitHub.svg?inline';
 
 export default {
     components: { SourceSVG },

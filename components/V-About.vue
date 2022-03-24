@@ -47,22 +47,15 @@
 </template>
 
 <script>
-import JavaScriptSVG from '~/images/lang/js.svg?inline';
-import TypeScriptSVG from '~/images/lang/ts.svg?inline';
-import HTMLSVG from '~/images/lang/html.svg?inline';
-import RustSVG from '~/images/lang/rs.svg?inline';
-import CSSSVG from '~/images/lang/css.svg?inline';
-import PYSVG from '~/images/lang/py.svg?inline';
+import JS_SVG from '~/images/logo/JavaScript.svg?inline';
+import TS_SVG from '~/images/logo/TypeScript.svg?inline';
+import PY_SVG from '~/images/logo/Python.svg?inline';
+import HTML_SVG from '~/images/logo/HTML.svg?inline';
+import RS_SVG from '~/images/logo/Rust.svg?inline';
+import CSS_SVG from '~/images/logo/CSS.svg?inline';
 
 export default {
-    components: {
-        JavaScriptSVG,
-        TypeScriptSVG,
-        HTMLSVG,
-        RustSVG,
-        CSSSVG,
-        PYSVG
-    },
+    components: { HTML_SVG, CSS_SVG, JS_SVG, TS_SVG, PY_SVG, RS_SVG },
     data: () => ({
         about: null,
         icons: [
