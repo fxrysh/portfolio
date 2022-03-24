@@ -3,5 +3,9 @@
     "editor.formatOnSave": true,
 
     "files.insertFinalNewline": true,
-    "files.eol": "\n"
+    "files.eol": "\n",
+
+    "[glsl]": {
+        "editor.defaultFormatter": "raczzalan.webgl-glsl-editor"
+    }
 }

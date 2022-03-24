@@ -4,5 +4,6 @@ dist/
 .cache/
 .nuxt/
 
+.eslintcache
 .DS_Store
 .env
