@@ -5,6 +5,7 @@
   "scripts": {
     "lint": "npx eslint --cache-location \".cache/eslint/.eslintcache\" --ext \".js,.vue\" .",
     "static": "python3 -m 'http.server' -d dist/ 8000",
+    "deploy": "npx gh-pages -d dist/ -b static",
     "fmt": "npx prettier --write --check .",
     "gen": "npx nuxt generate",
     "start": "npx nuxt start",
@@ -39,6 +40,7 @@
     "eslint-plugin-nuxt": "^3.1.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^8.5.0",
+    "gh-pages": "^3.2.3",
     "glslify-loader": "^2.0.0",
     "nuxt-gsap-module": "^1.6.0",
     "nuxt-helmet": "3.0.0",
