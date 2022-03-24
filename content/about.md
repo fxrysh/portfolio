@@ -1,0 +1,1 @@
+Hello! I'm Farish Irfan, a Malaysian based hobbyist developer. Even though I mainly write JS/TS, HTML/CSS and Python, I can actually work with lower level languages such as Rust and few others. Other than programming, I like to watch anime and some sports.

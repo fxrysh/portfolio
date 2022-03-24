@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import ArrowLink from '~/images/arrow-link.svg?inline';
+import ArrowLink from '~/images/arrow/link.svg?inline';
 
 export default {
     components: { ArrowLink },

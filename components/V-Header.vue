@@ -47,7 +47,7 @@ export default {
                 { label: 'About', action: () => this.$scrollTo('.about') },
                 { label: 'Contact', action: () => this.$scrollTo('.contact') }
             ],
-            subTitleText: 'Front End Developer'
+            subTitleText: 'Software Developer'
         };
     },
     mounted() {
