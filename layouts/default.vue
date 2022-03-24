@@ -12,6 +12,7 @@
 export default {
     name: 'DefaultLayout',
     mounted() {
+        this.clear();
         this.logGreeting();
         this.setViewHeight();
         window.addEventListener('resize', this.setViewHeight);
@@ -23,9 +24,11 @@ export default {
         },
         logGreeting() {
             console.log(
-                "Looking for source code? Why not check the repository itself! Don't forget to leave a ⭐!\n",
-                'Repository: https://github.com/fxrysh/portfolio'
+                "Looking for source code? Why not check the repository itself! Don't forget to leave a ⭐!\nRepository: https://github.com/fxrysh/portfolio"
             );
+        },
+        clear() {
+            console.clear();
         }
     }
 };
