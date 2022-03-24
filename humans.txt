@@ -1,0 +1,25 @@
+DEVELOPER:
+- Farish Irfan
+    - twitter.com/fxryshdev
+    - github.com/fxrysh
+
+-------------------------------------------------------------------------------
+
+DESIGNER:
+- Farish Irfan
+    - twitter.com/fxryshdev
+    - github.com/fxrysh
+
+-------------------------------------------------------------------------------
+
+TECHNOLOGY:
+- VueJS
+- NuxtJS
+- ThreeJS
+- GSAP
+- SASS
+
+-------------------------------------------------------------------------------
+
+FONT:
+- Raleway
