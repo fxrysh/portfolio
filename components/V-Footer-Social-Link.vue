@@ -91,29 +91,24 @@ export default {
 <style lang="scss">
 .social-link {
     display: inline-block;
-
-    margin: 0;
-
     cursor: pointer;
+    margin: 0;
 
     &__wrapper {
         position: relative;
-
-        line-height: 1;
         overflow: hidden;
+        line-height: 1;
     }
 
     &__line {
         letter-spacing: 0.25px;
-        cursor: pointer;
-
-        margin: 0;
-        padding: 0;
         white-space: nowrap;
+        cursor: pointer;
+        padding: 0;
+        margin: 0;
 
         &:nth-child(1) {
             font-size: calc(var(--step-0) - 0.125rem);
-
             transform: translateY(100%);
 
             @media (prefers-reduced-motion: reduce) {
@@ -122,17 +117,15 @@ export default {
         }
 
         &:nth-child(2) {
-            position: absolute;
-            top: 0;
-            right: 0;
-
             font-size: calc(var(--step--1) - 0.0125rem);
+            position: absolute;
+            right: 0;
+            top: 0;
 
             @media screen and (max-width: 600px) {
                 font-size: calc(var(--step--1) - 0.05rem);
-
-                right: 50%;
                 transform: translateX(50%);
+                right: 50%;
             }
 
             @media (prefers-reduced-motion: reduce) {
@@ -145,15 +138,14 @@ export default {
         cursor: pointer !important;
 
         .sr-only {
-            position: static;
-            width: auto;
-            height: auto;
-
             font-size: var(--step--1);
+            position: static;
+            height: auto;
+            width: auto;
 
             &:is(:focus, :hover) {
-                color: #ffe6ed;
                 text-decoration: underline;
+                color: #ffe6ed;
             }
         }
     }
