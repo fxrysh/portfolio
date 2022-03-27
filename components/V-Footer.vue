@@ -114,13 +114,12 @@ export default {
 @use 'sass:color';
 
 @mixin visible-after {
-    content: '';
-
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
+    content: '';
     bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
 
     @media (prefers-reduced-motion: reduce) {
         content: none;
@@ -132,38 +131,31 @@ export default {
     overflow: hidden;
 
     &__wrapper {
-        display: flex;
         justify-content: flex-start;
         align-items: stretch;
-        flex-wrap: wrap;
-
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        z-index: -1;
-
         pointer-events: all;
+        flex-wrap: wrap;
+        position: fixed;
+        display: flex;
+        z-index: -1;
+        bottom: 0;
+        right: 0;
+        left: 0;
     }
 
     &__content {
         --secondary-color: #{color.adjust($color: #fff, $lightness: -25%)};
-
-        flex-basis: 80%;
-        flex-grow: 1;
-
-        display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
-        align-items: center;
-
-        position: relative;
-
-        width: 100%;
-
-        color: whitesmoke;
         padding: 2rem clamp(1rem, 4vw, 5rem) 3rem;
         background: var(--black-color);
+        align-items: center;
+        position: relative;
+        color: whitesmoke;
+        flex-basis: 80%;
+        display: grid;
+        flex-grow: 1;
+        gap: 1.5rem;
+        width: 100%;
 
         & > *:nth-child(even) {
             justify-self: end;
@@ -171,31 +163,23 @@ export default {
         }
 
         &__title {
-            --x-offset: 0px;
-            display: inline-block;
-
-            position: relative;
-
             font-size: var(--step-4);
-
-            margin: 0;
+            display: inline-block;
             width: min-content;
-
+            position: relative;
+            --x-offset: 0px;
             overflow: hidden;
+            margin: 0;
 
             .serif {
-                display: inline-block;
-
-                position: relative;
-
                 margin-inline-start: calc(var(--step-5) / 2);
+                display: inline-block;
+                position: relative;
 
                 &::after {
                     @include visible-after;
 
-                    // NOTE: #030303 - main black color
                     background-color: rgba($color: #030303, $alpha: 0.75);
-
                     transform: translateX(var(--x-offset));
                 }
             }
@@ -203,18 +187,16 @@ export default {
             &::after {
                 @include visible-after;
 
-                bottom: calc(50% - 5px);
-
                 background-color: rgba($color: #030303, $alpha: 0.65);
-
                 transform: translateX(var(--x-offset));
+                bottom: calc(50% - 5px);
             }
         }
 
         &__social {
+            padding-inline-start: 0;
             list-style-type: none;
             margin: 0;
-            padding-inline-start: 0;
 
             &__link {
                 margin: 1rem 0;
@@ -238,9 +220,9 @@ export default {
             margin: 0;
 
             img {
+                transform: translateY(20%);
                 width: var(--step--1);
                 height: auto;
-                transform: translateY(20%);
 
                 &:last-of-type {
                     width: calc(var(--step--1) + 0.15rem);
@@ -249,21 +231,18 @@ export default {
         }
 
         &::after {
-            content: '';
-
+            background-color: rgba($color: white, $alpha: 0.125);
             position: absolute;
-            top: 0;
+            content: '';
+            width: 1px;
             bottom: 0;
             right: 0;
-
-            width: 1px;
-
-            background-color: rgba($color: white, $alpha: 0.125);
+            top: 0;
         }
 
         @media screen and (max-width: 600px) {
-            grid-template-columns: 1fr;
             grid-template-rows: repeat(4, fit-content);
+            grid-template-columns: 1fr;
 
             & > * {
                 justify-self: center !important;
@@ -273,24 +252,21 @@ export default {
     }
 
     &__arrow {
-        width: 40%;
+        transition: transform 300ms, opacity 300ms;
+        color: darken($color: white, $amount: 40);
         max-width: min(15vw, 130px);
         height: auto;
-        color: darken($color: white, $amount: 40);
-
-        transition: transform 300ms, opacity 300ms;
+        width: 40%;
 
         &__wrapper {
-            flex-basis: 20%;
-            flex-grow: 1;
-
-            display: flex;
+            background: var(--black-color);
             justify-content: center;
             align-items: center;
-
             min-width: 115px;
-            background: var(--black-color);
             cursor: pointer;
+            flex-basis: 20%;
+            display: flex;
+            flex-grow: 1;
 
             &:is(:focus, :hover) {
                 svg {
