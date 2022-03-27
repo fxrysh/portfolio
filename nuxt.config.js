@@ -79,7 +79,6 @@ export default {
         '@nuxtjs/eslint-module',
         'nuxt-gsap-module',
         '@nuxt/postcss8',
-        '@nuxtjs/dotenv',
         '@nuxtjs/svg',
         '@nuxt/image'
     ],
@@ -122,15 +121,6 @@ export default {
             site: '@fxryshdev',
             creator: '@fxryshdev',
             card: 'summary'
-        },
-
-        og: {
-            type: 'website',
-            image: {
-                url: 'https://fxrysh.is-a.dev/logo.png',
-                height: '1440',
-                width: '1440'
-            }
         }
     }
 };
