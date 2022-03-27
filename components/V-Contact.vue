@@ -70,41 +70,35 @@ export default {
 
 <style lang="scss">
 .contact {
-    width: 100%;
-    max-width: 100vw;
-
-    margin-top: -2px;
-    padding: 4rem 0 8rem;
     background-color: var(--black-color);
-
-    overflow: hidden;
+    padding: 4rem 0 8rem;
     pointer-events: all;
+    max-width: 100vw;
+    margin-top: -2px;
+    overflow: hidden;
+    width: 100%;
 
     &__email {
-        display: block;
-        position: relative;
-
-        line-height: 1;
-
         color: darken($color: white, $amount: 40);
         text-decoration: none;
+        position: relative;
+        display: block;
+        line-height: 1;
 
         &__row {
-            display: block;
-
             font-size: var(--step-5);
-            margin: 0;
-            white-space: nowrap;
             will-change: transform;
+            white-space: nowrap;
+            display: block;
+            margin: 0;
 
             @supports (-webkit-text-stroke: 1px white) {
-                color: transparent;
                 -webkit-text-stroke: 1px darken($color: white, $amount: 40);
+                color: transparent;
             }
         }
 
         @media (prefers-reduced-motion: reduce) {
-            // NOTE: important is needed for overwriting styles which was set by JS
             cursor: pointer !important;
         }
     }
