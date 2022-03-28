@@ -19,7 +19,6 @@ jobs:
       with:
         node-version: 16.x
         cache: npm
-        cache: npm
 
     - name: Install Dependencies
       run: npm ci
