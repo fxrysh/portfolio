@@ -185,30 +185,27 @@ export default {
 .menu {
     --100vh: calc(100 * var(--vh, 1vh));
 
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1;
-
-    width: 100%;
-    height: 100%;
     height: var(--100vh);
-
-    opacity: 0;
-    visibility: hidden;
     pointer-events: all;
+    visibility: hidden;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    opacity: 0;
+    left: 0;
+    top: 0;
 
     &__back-item {
-        $ITEMS_COUNT: 6;
         --x-padding: calc(clamp(1rem, 4vw, 5rem) + var(--step-0));
+        $ITEMS_COUNT: 6;
 
-        position: absolute;
-        left: 0;
-        right: 0;
         height: calc(var(--100vh) / #{$ITEMS_COUNT});
-
-        padding: 1rem var(--x-padding);
         background-color: var(--black-color);
+        padding: 1rem var(--x-padding);
+        position: absolute;
+        right: 0;
+        left: 0;
 
         @for $i from 0 to $ITEMS_COUNT {
             &:nth-child(#{$i + 1}) {
@@ -217,65 +214,57 @@ export default {
         }
 
         &__content {
-            display: flex;
             justify-content: flex-start;
             align-items: flex-end;
-
+            cursor: pointer;
+            display: flex;
             height: 100%;
 
-            cursor: pointer;
-
             &__title {
-                position: relative;
-
                 color: darken($color: #fff, $amount: 50);
                 font-size: var(--step-3);
+                position: relative;
                 line-height: 1;
-
                 width: 100%;
                 margin: 0;
 
                 span {
-                    display: inline-block;
-                    transform-origin: left center;
                     transition: color 200ms, transform 200ms var(--ease-back);
+                    transform-origin: left center;
+                    display: inline-block;
                 }
 
                 &::after {
                     --size: var(--step--1);
 
-                    content: '';
-                    position: absolute;
-                    top: 50%;
-                    right: 0;
-
-                    width: var(--size);
-                    height: var(--size);
-                    border-radius: 50%;
-                    background-color: #ffe6ed;
-                    opacity: 0;
-
                     transform: translate(-50%, -50%);
                     transition: opacity 200ms ease;
+                    background-color: #ffe6ed;
+                    height: var(--size);
+                    position: absolute;
+                    border-radius: 50%;
+                    width: var(--size);
+                    content: '';
+                    opacity: 0;
+                    right: 0;
+                    top: 50%;
                 }
             }
 
             &__links {
-                display: flex;
                 justify-content: flex-start;
+                padding-inline-start: 0;
+                list-style-type: none;
                 align-items: center;
                 gap: var(--step-1);
-
-                list-style-type: none;
-                padding-inline-start: 0;
+                display: flex;
 
                 &__item a {
                     font-size: calc(var(--step--2) - 0.075rem);
                     color: darken($color: #fff, $amount: 50);
                     text-transform: uppercase;
-                    text-decoration: none;
-
                     transition: color 100ms;
+                    text-decoration: none;
 
                     &:is(:hover, :focus) {
                         color: #ffe6ed;
@@ -309,15 +298,13 @@ export default {
         }
 
         &__line {
-            display: inline-block;
-
-            position: absolute;
-            bottom: 1%;
-            left: var(--x-padding);
-            right: var(--x-padding);
-
-            height: 1px;
             background-color: darken($color: #fff, $amount: 75);
+            right: var(--x-padding);
+            left: var(--x-padding);
+            display: inline-block;
+            position: absolute;
+            height: 1px;
+            bottom: 1%;
         }
     }
 }
