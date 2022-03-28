@@ -124,40 +124,35 @@ export default {
 .header {
     --100vh: calc(100 * var(--vh, 1vh));
 
-    display: flex;
+    background-color: var(--black-color);
     justify-content: center;
     align-items: center;
-
-    position: relative;
-    z-index: 0;
-
-    width: 100%;
-    max-width: 100vw;
-    min-height: 100vh;
-    background-color: var(--black-color);
     pointer-events: all;
+    position: relative;
+    min-height: 100vh;
     overflow: hidden;
+    max-width: 100vw;
+    display: flex;
+    width: 100%;
+    z-index: 0;
 
     &__canvas {
         position: absolute;
+        z-index: -10;
+        height: 100%;
+        width: 100%;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 100%;
-
-        z-index: -10;
     }
 
     &__container {
-        color: white;
-
         mix-blend-mode: difference;
         cursor: default;
+        color: white;
 
         &__title {
-            line-height: 1.2;
-
             margin-bottom: 1rem;
+            line-height: 1.2;
 
             & > *:last-of-type {
                 margin-top: min(-0.5rem, calc(1vw * -1));
@@ -171,20 +166,18 @@ export default {
     }
 
     &__bottom-bar {
-        display: flex;
-        justify-content: flex-start;
-        align-items: flex-end;
-
-        position: absolute;
         top: calc(var(--100vh) - var(--step--1));
-        left: var(--x-padding);
-        right: var(--x-padding);
-
         transform: translateY(-100%);
+        justify-content: flex-start;
+        right: var(--x-padding);
+        left: var(--x-padding);
+        align-items: flex-end;
+        position: absolute;
+        display: flex;
 
         &__clock {
-            display: none;
             color: lighten($color: grey, $amount: 1);
+            display: none;
         }
 
         &__scroll-down {
@@ -193,46 +186,40 @@ export default {
     }
 
     &__navigation {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-
-        position: absolute;
-        top: 0;
-        left: 0;
-
-        font-size: var(--step--1);
-        color: white;
-        mix-blend-mode: difference;
-
-        width: 100%;
-
         padding-inline: clamp(1rem, 4vw, 5rem);
-        pointer-events: all;
+        mix-blend-mode: difference;
+        justify-content: flex-end;
+        font-size: var(--step--1);
         list-style-type: none;
+        pointer-events: all;
+        align-items: center;
+        position: absolute;
+        display: flex;
+        color: white;
+        width: 100%;
+        left: 0;
+        top: 0;
 
         & > * {
             position: relative;
         }
 
         @media screen and (max-width: 512px) {
-            width: 100%;
             justify-content: space-between;
+            width: 100%;
         }
     }
 
     &::before {
-        content: '';
-
         position: absolute;
+        max-height: 11rem;
+        min-height: 2rem;
+        content: '';
+        width: 100%;
+        height: 25%;
         z-index: 0;
         bottom: 0;
         left: 0;
-
-        width: 100%;
-        height: 25%;
-        min-height: 2rem;
-        max-height: 11rem;
 
         background: linear-gradient(
             to top,
@@ -244,8 +231,8 @@ export default {
 }
 
 .line {
-    display: block;
     overflow: hidden;
+    display: block;
 
     &__content {
         display: inline-block;

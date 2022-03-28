@@ -141,74 +141,66 @@ export default {
 
 <style lang="scss">
 .about {
-    position: relative;
-
-    min-height: 100vh;
-    margin-top: -2px;
     padding: 4rem clamp(1rem, 7vw, 5rem) 4rem;
-    color: white;
     background-color: var(--black-color);
     pointer-events: all;
+    position: relative;
+    min-height: 100vh;
+    margin-top: -2px;
+    color: white;
 
     &__text {
-        max-width: 1100px;
-
         color: darken($color: white, $amount: 40);
         font-size: var(--step-0);
-        line-height: 1.5;
         letter-spacing: 0.1px;
         text-align: center;
-
+        max-width: 1100px;
+        line-height: 1.5;
         margin: 0 auto;
 
         &__word {
-            display: inline-block;
-
-            opacity: 0;
-            transform: translateY(50%);
-
             transition: transform 750ms ease, opacity 750ms ease;
+            transform: translateY(50%);
+            display: inline-block;
+            opacity: 0;
 
             @media (prefers-reduced-motion: reduce) {
                 transform: translateY(0%);
             }
 
             &--revealed {
-                opacity: 1;
                 transform: translateY(0%);
+                opacity: 1;
             }
         }
     }
 
     &__tech {
-        display: flex;
         justify-content: space-evenly;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: var(--step-3);
-
-        max-width: 1100px;
-        list-style-type: none;
         padding-inline-start: 0;
+        list-style-type: none;
+        align-items: center;
+        gap: var(--step-3);
+        max-width: 1100px;
         margin: 6% auto 0;
+        flex-wrap: wrap;
+        display: flex;
 
         &__item {
-            display: inline-block;
-
-            cursor: none;
             transition: transform 300ms var(--ease-back);
+            display: inline-block;
+            cursor: none;
 
             &:is(:hover, :focus-visible) {
                 transform: scale(0.9);
             }
 
             &__svg {
-                width: 100%;
-                max-width: 150px;
-                height: auto;
-
-                opacity: 0.75;
                 filter: grayscale(1) invert(1);
+                max-width: 150px;
+                opacity: 0.75;
+                height: auto;
+                width: 100%;
 
                 @media screen and (max-width: 500px) {
                     max-width: 30vw;
@@ -226,12 +218,10 @@ export default {
     }
 
     &__bg-img {
-        position: absolute;
-
-        width: calc(var(--step-5) * 2);
-        height: auto;
-
         filter: drop-shadow(0 0 2rem #fff) blur(3px);
+        width: calc(var(--step-5) * 2);
+        position: absolute;
+        height: auto;
     }
 }
 </style>

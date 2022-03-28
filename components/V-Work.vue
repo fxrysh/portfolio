@@ -33,24 +33,22 @@ export default {
 
 <style lang="scss">
 .works {
-    margin-top: -1px;
     padding: 4rem clamp(1rem, 7vw, 5rem) 1rem;
-    color: white;
     background-color: var(--black-color);
     pointer-events: all;
+    margin-top: -1px;
+    color: white;
 
     &__list {
-        display: grid;
-        justify-items: center;
-        align-items: start;
         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: var(--step-3);
-
-        max-width: 1100px;
-
-        list-style-type: none;
-        margin: 0 auto;
         padding-inline-start: 0;
+        justify-items: center;
+        list-style-type: none;
+        align-items: start;
+        gap: var(--step-3);
+        max-width: 1100px;
+        display: grid;
+        margin: 0 auto;
 
         @media screen and(min-width: 798px) {
             &__item:nth-child(even) {

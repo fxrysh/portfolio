@@ -9,9 +9,6 @@ jobs:
   lint:
     name: Lint
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [12.x, 14.x, 16.x]
 
     steps:
     - name: Checkout Repository
@@ -20,7 +17,7 @@ jobs:
     - name: Setup NodeJS
       uses: actions/setup-node@v2
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: 16.x
         cache: npm
 
     - name: Install Dependencies
@@ -32,9 +29,6 @@ jobs:
   test:
     name: Test
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [12.x, 14.x, 16.x]
 
     steps:
     - name: Checkout Repository
@@ -43,7 +37,7 @@ jobs:
     - name: Setup NodeJS
       uses: actions/setup-node@v2
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: 16.x
         cache: npm
 
     - name: Install Dependencies

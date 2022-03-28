@@ -237,81 +237,65 @@ export default {
 
 <style lang="scss">
 .nav {
-    display: flex;
+    color: darken($color: white, $amount: 27);
     justify-content: space-between;
+    padding: 1rem var(--x-padding);
+    transition: color 200ms ease;
+    pointer-events: none;
     align-items: stretch;
-
     position: fixed;
+    display: flex;
+    z-index: 2;
     top: 1rem;
     left: 0;
-    z-index: 2;
-
-    padding: 1rem var(--x-padding);
     width: 100%;
-    pointer-events: none;
-
-    color: darken($color: white, $amount: 27);
-
-    transition: color 200ms ease;
 
     &__title {
-        color: currentColor;
-        font-size: var(--step-2);
-
-        margin: 0;
-        padding: 0;
-        border: none;
         background-color: transparent;
-
-        cursor: pointer;
+        font-size: var(--step-2);
+        color: currentColor;
         pointer-events: all;
+        cursor: pointer;
+        border: none;
+        padding: 0;
+        margin: 0;
     }
 
     &__sections {
+        pointer-events: all;
         position: relative;
 
-        pointer-events: all;
-
         &__list {
-            display: grid;
             grid-template-rows: repeat(var(--sections-length), 1fr);
-            gap: 0.25rem;
-
-            margin: 0;
-            padding: 0;
             list-style-type: none;
+            display: grid;
+            gap: 0.25rem;
+            padding: 0;
+            margin: 0;
 
             &__section {
-                position: relative;
-
-                font-size: var(--step--2);
-                text-align: right;
-
-                cursor: pointer;
-                pointer-events: all;
-
                 transition: color 100ms var(--ease-back);
+                font-size: var(--step--2);
+                pointer-events: all;
+                position: relative;
+                text-align: right;
+                cursor: pointer;
 
                 &::before {
                     --size: calc(var(--step--2) - 0.6rem);
-                    content: none;
-
-                    position: absolute;
-                    top: 50%;
-                    right: 105%;
-
-                    width: var(--size);
-                    height: var(--size);
-
-                    border-radius: 50%;
-                    opacity: 0.75;
-                    background-color: #ffe6ed;
 
                     transform: translate(-50%, -50%);
-
-                    opacity: 0;
-
                     transition: opacity 100ms ease;
+                    background-color: #ffe6ed;
+                    height: var(--size);
+                    width: var(--size);
+                    position: absolute;
+                    border-radius: 50%;
+                    content: none;
+                    opacity: 0.75;
+                    right: 105%;
+                    opacity: 0;
+                    top: 50%;
 
                     @media (prefers-reduced-motion: reduce) {
                         content: '';
@@ -324,8 +308,8 @@ export default {
                 }
 
                 &--active::before {
-                    opacity: 1;
                     transition: opacity 400ms ease;
+                    opacity: 1;
                 }
 
                 &:is(:hover, :focus) {
@@ -336,26 +320,23 @@ export default {
         }
 
         &__circle {
-            --top-offset: 1px;
             --size: calc(var(--step--2) - 0.6rem);
+            --top-offset: 1px;
 
-            position: absolute;
+            transition: right 300ms var(--ease-back), opacity 300ms;
+            transform: translate(-50%, 50%);
+            background-color: #ffe6ed;
             top: var(--top-offset);
-            right: 105%;
-
-            width: var(--size);
             height: var(--size);
-
+            width: var(--size);
+            position: absolute;
             border-radius: 50%;
             opacity: 0.75;
-            background-color: #ffe6ed;
-
-            transform: translate(-50%, 50%);
-            transition: right 300ms var(--ease-back), opacity 300ms;
+            right: 105%;
 
             &--hidden {
-                opacity: 0;
                 right: 110%;
+                opacity: 0;
             }
 
             @media (prefers-reduced-motion: reduce) {
@@ -371,23 +352,19 @@ export default {
     &__menu-button {
         --bg-scale: 0;
 
-        position: relative;
-        z-index: 1;
-
+        transition: transform 300ms var(--ease-back);
         width: max(var(--step-5), 4rem);
+        transform-origin: right center;
+        background: transparent;
+        pointer-events: all;
+        color: currentColor;
+        position: relative;
+        cursor: pointer;
+        border: none;
         height: auto;
-
+        z-index: 1;
         padding: 0;
         margin: 0;
-        color: currentColor;
-        border: none;
-        background: transparent;
-
-        cursor: pointer;
-        pointer-events: all;
-
-        transition: transform 300ms var(--ease-back);
-        transform-origin: right center;
 
         &:active {
             transform: scale(0.9);
@@ -406,26 +383,22 @@ export default {
         &::after {
             --size: 120%;
 
-            content: '';
-
-            position: absolute;
-            z-index: -1;
-            top: 50%;
-            left: 50%;
-
-            width: var(--size);
-            height: var(--size);
-
-            border-radius: 50%;
-            background-color: #ffe6ed;
-
             transform: translate(-50%, -51.5%) scale(var(--bg-scale));
             // transition: transform 400ms;
 
-            @supports (aspect-ratio: 1/1) {
-                height: unset;
+            background-color: #ffe6ed;
+            height: var(--size);
+            width: var(--size);
+            position: absolute;
+            border-radius: 50%;
+            content: '';
+            z-index: -1;
+            left: 50%;
+            top: 50%;
 
+            @supports (aspect-ratio: 1/1) {
                 aspect-ratio: 1/1;
+                height: unset;
             }
         }
     }
