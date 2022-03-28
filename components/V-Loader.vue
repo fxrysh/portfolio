@@ -92,31 +92,26 @@ export default {
 
 <style lang="scss">
 .loader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 5;
-
-    width: 100vw;
-    height: 100vh;
-
-    color: #dfdfdf;
     background-color: #030303;
     pointer-events: all;
+    color: #dfdfdf;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    z-index: 5;
+    left: 0;
+    top: 0;
 
     &__word {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-
-        font-size: var(--step-2);
-        line-height: 1.125;
-
-        margin: 0;
-        opacity: 0;
-
-        overflow: hidden;
         transform: translate(-50%, -50%);
+        font-size: var(--step-2);
+        position: absolute;
+        line-height: 1.125;
+        overflow: hidden;
+        opacity: 0;
+        left: 50%;
+        margin: 0;
+        top: 50%;
 
         &__char {
             display: inline-block;
