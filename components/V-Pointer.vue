@@ -120,37 +120,29 @@ export default {
 
 <style lang="scss">
 .pointer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    position: fixed;
-    z-index: 100;
-
-    width: 12px;
-    height: 12px;
-
-    top: 50%;
-    left: 50%;
-
-    opacity: 0;
-    border-radius: 50%;
-    background-color: #ffe6ed;
-
-    visibility: hidden;
-    pointer-events: none;
-
-    mix-blend-mode: exclusion;
-
-    transition: opacity 300ms;
     transform-origin: center center;
+    background-color: #ffe6ed;
+    transition: opacity 300ms;
+    mix-blend-mode: exclusion;
+    justify-content: center;
+    pointer-events: none;
+    align-items: center;
+    border-radius: 50%;
+    visibility: hidden;
+    position: fixed;
+    display: flex;
+    height: 12px;
+    z-index: 100;
+    width: 12px;
+    opacity: 0;
+    left: 50%;
+    top: 50%;
 
     &__arrow {
+        transform-origin: center center;
+        transform: scale(0);
         width: 22.5%;
         height: auto;
-
-        transform: scale(0);
-        transform-origin: center center;
     }
 
     &--hidden {

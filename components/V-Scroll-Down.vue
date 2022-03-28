@@ -70,16 +70,14 @@ export default {
     --base-font-size: calc(var(--step--1) - 0.075rem);
 
     position: relative;
+    cursor: pointer;
     margin: 0;
 
-    cursor: pointer;
-
     &__text {
-        font-size: calc(var(--base-font-size) + 0.13rem);
-        font-weight: 200;
-        letter-spacing: 0.5px;
-
         padding-inline-start: calc(var(--base-font-size) + 0.5rem);
+        font-size: calc(var(--base-font-size) + 0.13rem);
+        letter-spacing: 0.5px;
+        font-weight: 200;
 
         @media (prefers-reduced-motion: reduce) {
             padding-inline-start: 0;
@@ -90,18 +88,16 @@ export default {
         --size: var(--base-font-size);
         --min-size: 15px;
 
-        position: absolute;
-        left: 0;
-        bottom: 10%;
-
-        height: var(--size);
-        width: var(--size);
+        box-shadow: 0 0 1px 1px rgba($color: #fff, $alpha: 1);
         min-height: var(--min-size);
         min-width: var(--min-size);
-
-        box-shadow: 0 0 1px 1px rgba($color: #fff, $alpha: 1);
-        border-radius: 50%;
         background: transparent;
+        height: var(--size);
+        width: var(--size);
+        position: absolute;
+        border-radius: 50%;
+        bottom: 10%;
+        left: 0;
     }
 }
 </style>

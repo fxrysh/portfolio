@@ -101,18 +101,16 @@ export default {
 @use 'sass:color';
 
 .work {
-    position: relative;
-
-    max-width: 475px;
     will-change: transform, opacity;
+    position: relative;
+    max-width: 475px;
 
     &__wrapper {
-        display: grid;
         grid-template-rows: fit-content fit-content;
-        gap: 1rem;
-
-        cursor: none;
         text-decoration: none;
+        display: grid;
+        cursor: none;
+        gap: 1rem;
 
         @media (prefers-reduced-motion: reduce) {
             cursor: pointer;
@@ -120,92 +118,78 @@ export default {
     }
 
     &__image {
+        object-position: center center;
+        will-change: transform;
         position: relative;
+        object-fit: cover;
+        height: 110%;
+        width: 100%;
         top: 50%;
         left: 0;
 
-        width: 100%;
-        height: 110%;
-
-        object-fit: cover;
-        object-position: center center;
-
-        will-change: transform;
-
         &__wrapper {
-            width: 100%;
-            height: 40vw;
+            overflow: hidden;
             min-height: 20rem;
             max-height: 30rem;
-
-            overflow: hidden;
+            height: 40vw;
+            width: 100%;
 
             @supports (aspect-ratio: 1/1) {
                 aspect-ratio: 1/1;
-
-                height: unset;
                 max-height: unset;
                 min-height: unset;
+                height: unset;
             }
         }
     }
 
     &__content {
         $text-color: color.adjust(
-            $color: #fff,
-            $lightness: -20%
+            $lightness: -20%,
+            $color: #fff
         );
 
         &__title {
             font-size: calc(var(--step-0) + 0.4rem);
             letter-spacing: 0.25px;
             color: $text-color;
-
             margin-bottom: 0;
         }
 
         &__tags {
-            color: darken($text-color, 5);
             font-size: calc(var(--step--2) - 0rem);
+            color: darken($text-color, 5);
         }
     }
 
     &__source {
         --pd: 0.5rem;
 
-        position: absolute;
-        z-index: 1;
-        top: calc(var(--image-height) - var(--pd));
-        right: var(--pd);
-
-        max-width: var(--step-3);
-        max-height: var(--step-3);
-
-        min-width: 48px;
-        min-height: 48px;
-
-        mix-blend-mode: screen;
-
-        cursor: none;
         color: darken($color: white, $amount: 10);
-
+        top: calc(var(--image-height) - var(--pd));
         transform: translateY(-100%);
+        max-height: var(--step-3);
+        max-width: var(--step-3);
+        mix-blend-mode: screen;
+        position: absolute;
+        right: var(--pd);
+        min-height: 48px;
+        min-width: 48px;
+        cursor: none;
+        z-index: 1;
     }
 
     &::after {
-        content: '';
-
-        position: absolute;
-        z-index: 10;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-
         background-color: rgba($color: #030303, $alpha: 0.35);
-        pointer-events: none;
-
         transition: opacity 400ms;
+        pointer-events: none;
+        position: absolute;
+        content: '';
+        z-index: 10;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        top: 0;
     }
 
     &:is(:focus-within, :hover) {
