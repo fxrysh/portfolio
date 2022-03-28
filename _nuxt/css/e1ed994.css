@@ -1,0 +1,1 @@
+.loader{background-color:#030303;pointer-events:all;color:#dfdfdf;position:fixed;height:100vh;width:100vw;z-index:5;left:0;top:0}.loader__word{transform:translate(-50%,-50%);font-size:var(--step-2);position:absolute;line-height:1.125;overflow:hidden;opacity:0;left:50%;margin:0;top:50%}.loader__word__char{display:inline-block}.loader__word--logo{font-size:var(--step-4)}
