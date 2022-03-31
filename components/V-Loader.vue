@@ -33,7 +33,7 @@ export default {
     mounted() {
         this.$disableScrollY();
 
-        const readTime = 0.65;
+        const readTime = 0.45;
         const { loader, loaderWord1Chars } = this.$refs;
         const loaderChildren = Array.from(loader.children);
         const gsap = this.$gsap;

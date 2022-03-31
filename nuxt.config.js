@@ -6,52 +6,22 @@ export default {
 
     head: {
         htmlAttrs: { lang: 'en', dir: 'ltr' },
+        title: 'Farish Irfan | Portfolio',
         meta: [
-            { charset: 'utf-8' },
-            { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' },
-            { 'http-equiv': 'Reply-to', content: 'hello@farish.is-a.dev' },
-            { name: 'format-detection', content: 'telephone=no' },
-            { name: 'robots', content: 'all' },
-            { name: 'theme-color', content: '#030303' },
-            { name: 'apple-mobile-web-app-capable', content: 'yes' },
+            { charset: 'utf8' },
+            {
+                'http-equiv': 'X-UA-Compatible',
+                content: 'IE=edge'
+            },
             {
                 name: 'viewport',
-                content: 'width=device-width, initial-scale=1'
-            },
-            {
-                hid: 'description',
-                name: 'description',
-                content: 'Personal portfolio written in VueJS'
-            }
-        ],
-        link: [
-            {
-                rel: 'icon',
-                type: 'image/x-icon',
-                href: '/favicon.ico'
-            },
-            {
-                rel: 'manifest',
-                href: '/site.webmanifest'
-            },
-            {
-                rel: 'icon',
-                type: 'image/png',
-                sizes: '32x32',
-                href: '/favicon-32x32.png'
-            },
-            {
-                rel: 'icon',
-                type: 'image/png',
-                sizes: '16x16',
-                href: '/favicon-16x16.png'
-            },
-            {
-                rel: 'apple-touch-icon',
-                sizes: '180x180',
-                href: '/apple-touch-icon.png'
+                content: 'width=device-width, initial-scale=1.0'
             }
         ]
+    },
+
+    router: {
+        base: '/home/'
     },
 
     server: {
@@ -72,9 +42,8 @@ export default {
         '~/plugins/nuxt/smooth-scroll.client.js'
     ],
 
-    modules: ['@nuxt/content', 'nuxt-helmet', 'nuxt-seo'],
+    modules: ['@nuxt/content', 'nuxt-helmet'],
     buildModules: [
-        '~/modules/nuxt/cloudflare-headers.js',
         'nuxt-webpack-optimisations',
         '@nuxtjs/eslint-module',
         'nuxt-gsap-module',
@@ -98,29 +67,8 @@ export default {
 
     gsap: {
         extraPlugins: {
-            scrollTo: true,
-            scrollTrigger: true
-        }
-    },
-
-    cloudflareHeaders: {
-        '/*': [{ 'X-Robots-Tag': 'all' }]
-    },
-
-    seo: {
-        baseUrl: 'https://fxrysh.is-a.dev/',
-        url: 'https://fxrysh.is-a.dev/',
-        name: 'Farish Irfan',
-        title: 'Portfolio',
-        templateTitle: '%name% | %title%',
-        description: 'Personal portfolio written in VueJS',
-        author: false,
-        language: 'English',
-        lang: 'en',
-        twitter: {
-            site: '@fxryshdev',
-            creator: '@fxryshdev',
-            card: 'summary'
+            scrollTrigger: true,
+            scrollTo: true
         }
     }
 };
