@@ -41,7 +41,7 @@
     "eslint-plugin-vue": "^8.5.0",
     "gh-pages": "^3.2.3",
     "glslify-loader": "^2.0.0",
-    "nuxt-gsap-module": "^1.6.0",
+    "nuxt-gsap-module": "^1.7.1",
     "nuxt-helmet": "3.0.0",
     "postcss-logical": "^5.0.4",
     "prettier": "^2.6.1",
